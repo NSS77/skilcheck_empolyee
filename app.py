@@ -73,7 +73,7 @@ if "token" in query_params and query_params["token"]:
 # --- ログイン画面 ---
 if not st.session_state.get("logged_in", False):
     st.markdown("---")
-    st.title("スキルチェックシート分析")
+    st.title("スキルチェックシート分析アプリ")
     st.subheader("👤 ログイン")
 
     username_input = st.text_input("ユーザーID", key="login_user")
