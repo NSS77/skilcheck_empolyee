@@ -13,7 +13,8 @@ import secrets
 st.set_page_config(page_title="スキルチェックアプリ", layout="wide")
 
 # 日本語フォントを明示的に指定
-matplotlib.rcParams['font.family'] = 'Meiryo'   # Windows
+matplotlib.rcParams['font.family'] = 'IPAPGothic'
+matplotlib.rcParams['axes.unicode_minus'] = False
 
 # ---- DB接続 ----
 firebase_config = dict(st.secrets["firebase"])
