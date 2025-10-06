@@ -8,13 +8,17 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 import hashlib
 import secrets
+import matplotlib.font_manager as fm
 
 # ✅ ページ幅を広げる設定
 st.set_page_config(page_title="スキルチェックアプリ", layout="wide")
 
 # 日本語フォントを明示的に指定
-matplotlib.rcParams['font.family'] = 'IPAPGothic'
-matplotlib.rcParams['axes.unicode_minus'] = False
+# --- フォント設定（ローカルフォント読み込み） ---
+font_path = "fonts/ipaexg.ttf"
+fontprop = fm.FontProperties(fname=font_path)
+matplotlib.rcParams["font.family"] = fontprop.get_name()
+matplotlib.rcParams["axes.unicode_minus"] = False
 
 # ---- DB接続 ----
 firebase_config = dict(st.secrets["firebase"])
